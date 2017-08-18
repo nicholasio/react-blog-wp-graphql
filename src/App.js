@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import Homepage from "./Pages/Homepage";
+import Single from "./Pages/Single";
+
 import { HashRouter, Route } from 'react-router-dom';
 
 class App extends Component {
@@ -11,9 +13,11 @@ class App extends Component {
 	render() {
 		return (
 			<HashRouter>
-				<Route exact path="/" component={Homepage} />
+				<div class="App">
+					<Route exact path="/" component={Homepage} />
+					<Route path="/post/:id" component={Single} />
+				</div>
 			</HashRouter>
-
 		);
 	}
 }

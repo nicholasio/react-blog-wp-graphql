@@ -42,7 +42,7 @@ class Homepage extends Component {
 
 const HOMEPAGE_QUERY = gql`
 query {
-    pages{
+    pages(where: {parent: "0"}){
         edges{
             node{
                 id
