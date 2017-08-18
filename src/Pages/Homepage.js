@@ -6,9 +6,8 @@ import '../App.css';
 import Post from "../components/Post";
 
 class Homepage extends Component {
-	constructor(props, context){
+	constructor(props){
 		super(props);
-		this.client = context.client;
 	}
 	render() {
 		if ( this.props.homepageQuery && this.props.homepageQuery.loading ) {
