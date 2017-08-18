@@ -9,7 +9,7 @@ const Categories = ( {categories = []} ) => {
 					<div className="col-lg-6">
 						<ul className="list-unstyled mb-0">
 							{categories.map( (category,index) => (
-								<li><a href="#">{category.name}</a></li>
+								<li key={index} ><a href="#">{category.name}</a></li>
 							) )}
 						</ul>
 					</div>
