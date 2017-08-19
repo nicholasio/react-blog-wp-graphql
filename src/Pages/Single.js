@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Navigation from '../components/Navigation';
-import Sidebar from '../components/Sidebar';
+import C from '../constants';
 import { graphql, gql } from 'react-apollo';
 import '../App.css';
 import Post from "../components/Post";
@@ -38,15 +38,7 @@ class Single extends Component {
 
 const SINGLE_QUERY = gql`
 query getPost( $id: ID! ) {
-    pages{
-        edges{
-            node{
-                id
-                title
-                slug
-            }
-        }
-    }
+    ${C.GET_PAGES_MENU_QUERY}
     post( id: $id ){
         id
         title

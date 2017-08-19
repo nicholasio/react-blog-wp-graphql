@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Navigation from '../components/Navigation';
 import Sidebar from '../components/Sidebar';
+import C from '../constants';
 import { graphql, gql } from 'react-apollo';
 import '../App.css';
 import Post from "../components/Post";
@@ -39,18 +40,9 @@ class Homepage extends Component {
 		);
 	}
 }
-
 const HOMEPAGE_QUERY = gql`
 query {
-    pages(where: {parent: "0"}){
-        edges{
-            node{
-                id
-                title
-                slug
-            }
-        }
-    }
+    ${C.GET_PAGES_MENU_QUERY}
     posts{
         edges{
             node{
