@@ -6,13 +6,14 @@ import { graphql, gql } from 'react-apollo';
 import '../App.css';
 import Post from "../components/Post";
 
+
 class Category extends Component {
 	constructor(props){
 		super(props);
 	}
 	render() {
 		if ( this.props.categoryuery && this.props.categoryuery.loading ) {
-			return <div>Loading</div>;
+			return <ReactLoading type="bars" color="#444"/>;
 		}
 		if (this.props.categoryuery && this.props.categoryuery.error) {
 			return <div>Error</div>

@@ -5,14 +5,14 @@ import C from '../constants';
 import { graphql, gql } from 'react-apollo';
 import '../App.css';
 import Post from "../components/Post";
-
+import ReactLoading from 'react-loading';
 class Homepage extends Component {
 	constructor(props){
 		super(props);
 	}
 	render() {
 		if ( this.props.homepageQuery && this.props.homepageQuery.loading ) {
-			return <div>Loading</div>;
+			return <ReactLoading type="bars" delay="0" className="loading" color="#444"/>;
 		}
 		if (this.props.homepageQuery && this.props.homepageQuery.error) {
 			return <div>Error</div>

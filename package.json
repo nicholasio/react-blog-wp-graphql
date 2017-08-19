@@ -60,7 +60,8 @@
     ]
   },
   "devDependencies": {
-    "jsdom-quokka-plugin": "^1.0.5"
+    "jsdom-quokka-plugin": "^1.0.5",
+    "react-loading": "^0.1.4"
   },
   "jest": {
     "collectCoverageFrom": [

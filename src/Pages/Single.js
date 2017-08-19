@@ -4,6 +4,7 @@ import C from '../constants';
 import { graphql, gql } from 'react-apollo';
 import '../App.css';
 import Post from "../components/Post";
+import ReactLoading from 'react-loading';
 
 class Single extends Component {
 	constructor(props){
@@ -11,7 +12,7 @@ class Single extends Component {
 	}
 	render() {
 		if ( this.props.singleQuery && this.props.singleQuery.loading ) {
-			return <div>Loading Single</div>;
+			return <ReactLoading type="bars" delay="0" className="loading" color="#444"/>;
 		}
 		if (this.props.singleQuery && this.props.singleQuery.error) {
 			return <div>Error</div>
