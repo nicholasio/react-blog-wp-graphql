@@ -3,7 +3,7 @@ import './App.css';
 import Homepage from "./Pages/Homepage";
 import Single from "./Pages/Single";
 
-import { HashRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 class App extends Component {
 	constructor(props){
@@ -12,12 +12,12 @@ class App extends Component {
 
 	render() {
 		return (
-			<HashRouter>
-				<div class="App">
+			<BrowserRouter>
+				<div>
 					<Route exact path="/" component={Homepage} />
 					<Route path="/post/:id" component={Single} />
 				</div>
-			</HashRouter>
+			</BrowserRouter>
 		);
 	}
 }

@@ -6,20 +6,20 @@ import { graphql, gql } from 'react-apollo';
 import '../App.css';
 import Post from "../components/Post";
 
-class Homepage extends Component {
+class Category extends Component {
 	constructor(props){
 		super(props);
 	}
 	render() {
-		if ( this.props.homepageQuery && this.props.homepageQuery.loading ) {
+		if ( this.props.categoryuery && this.props.categoryuery.loading ) {
 			return <div>Loading</div>;
 		}
-		if (this.props.homepageQuery && this.props.homepageQuery.error) {
+		if (this.props.categoryuery && this.props.categoryuery.error) {
 			return <div>Error</div>
 		}
-		const pages = this.props.homepageQuery.pages.edges.map(page => page.node);
-		const categories = this.props.homepageQuery.categories.edges.map(category => category.node);
-		const posts = this.props.homepageQuery.posts.edges.map(post => {
+		const pages = this.props.categoryuery.pages.edges.map(page => page.node);
+		const categories = this.props.categoryuery.categories.edges.map(category => category.node);
+		const posts = this.props.categoryuery.posts.edges.map(post => {
 			return {
 				...post.node,
 				author: post.node.author.name
@@ -40,22 +40,9 @@ class Homepage extends Component {
 		);
 	}
 }
-const HOMEPAGE_QUERY = gql`
+const CATEGORY_QUERY = gql`
 query {
     ${C.GET_PAGES_MENU_QUERY}
-    posts{
-        edges{
-            node{
-                id
-                title
-                content
-                excerpt
-                author{
-                    name
-                }
-            }
-        }
-    }
     categories{
         edges{
             node{
@@ -67,4 +54,4 @@ query {
     }
 }
 `;
-export default graphql(HOMEPAGE_QUERY, { name: 'homepageQuery' }) (Homepage);
+export default graphql(CATEGORY_QUERY, { name: 'categoryuery' }) (Category);

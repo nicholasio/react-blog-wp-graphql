@@ -23,11 +23,11 @@ class Single extends Component {
 			};
 		return (
 			<div className="app">
-				<Navigation blogname="React and WPGraphQL" pages={pages} />
+				<Navigation pages={pages} />
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-12">
-							<Post {...post} />
+							<Post {...post} single="true" />
 						</div>
 					</div>
 				</div>
