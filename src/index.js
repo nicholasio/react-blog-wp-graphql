@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { ApolloProvider, createNetworkInterface, ApolloClient } from 'react-apollo';
+
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
 const networkInterface = createNetworkInterface( {
 	uri: 'http://local.wordpress.dev/graphql'
 } );
@@ -12,7 +16,7 @@ const client = new ApolloClient({
 });
 ReactDOM.render(
 	<ApolloProvider client={client}>
-		<App client={client} />
+		<App />
 	</ApolloProvider>,
 	document.getElementById('root')
 );

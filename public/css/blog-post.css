@@ -8,6 +8,23 @@ body .container {
     padding-top: 54px;
 }
 
+h1 a {
+    color: inherit;
+}
+h1 a:hover,
+h1 a:focus {
+    color: inherit;
+    text-decoration: underline ;
+}
+.loading {
+    position: fixed;
+    z-index: 999;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
 @media (min-width: 992px) {
     body .container {
         padding-top: 56px;
